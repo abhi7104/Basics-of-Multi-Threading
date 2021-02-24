@@ -18,7 +18,7 @@ public class question3 extends Thread {
     }
 
     public static void main(String[] args) {
-        ExecutorService executor= Executors.newSingleThreadScheduledExecutor();
+        ExecutorService executor= Executors.newSingleThreadExecutor();
         executor.submit(new question3());
         executor.submit(new question3());
 

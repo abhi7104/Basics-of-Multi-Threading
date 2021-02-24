@@ -8,12 +8,6 @@ public class question8 implements Runnable{
     {
         for(int i=0;i<1;i++)
         {
-            try{
-                t.sleep(100);
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             System.out.println(t.getName());
         }
     }
@@ -21,8 +15,7 @@ public class question8 implements Runnable{
 
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
         executor.schedule(new question8(),2, TimeUnit.MILLISECONDS);
-        executor.scheduleAtFixedRate(new question8(),1,1, TimeUnit.MILLISECONDS);
-        executor.scheduleWithFixedDelay(new question8(),1,1,TimeUnit.MILLISECONDS);
-        executor.shutdown();
+        executor.scheduleAtFixedRate(new question8(),5,1, TimeUnit.MILLISECONDS);
+        executor.scheduleWithFixedDelay(new question8(),4,1,TimeUnit.MILLISECONDS);
     }
 }

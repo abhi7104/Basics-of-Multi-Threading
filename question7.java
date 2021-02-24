@@ -17,8 +17,11 @@ public class question7 implements Runnable{
     }
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executor= Executors.newSingleThreadScheduledExecutor();
-        executor.submit(new question7());
+        Future res;
+        res=executor.submit(new question7());
         executor.shutdown();
+        System.out.println(res.isDone());
         executor.awaitTermination(1, TimeUnit.HOURS);
+        System.out.println(res.isDone());
     }
 }

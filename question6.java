@@ -21,8 +21,10 @@ public class question6 implements Runnable{
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executor= Executors.newSingleThreadScheduledExecutor();
-        Future f=executor.submit(new question6());
+        Future f=executor.submit(new question6(),"Executing");
+        executor.shutdown();
         System.out.println(f.get());
-
+        System.out.println(f.isDone());
+        System.out.println(f.isCancelled());
     }
 }
